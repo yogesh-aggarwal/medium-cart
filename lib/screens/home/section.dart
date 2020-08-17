@@ -46,6 +46,7 @@ class _HomeSectionState extends State<HomeSection> {
           ),
         ),
         SingleChildScrollView(
+          padding: contentPadding / 2,
           scrollDirection: Axis.horizontal,
           child: widget.items,
         ),
