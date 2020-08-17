@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mediumcart/screens/home/home.dart';
+import 'package:mediumcart/screens/home/screen.dart';
 
 void main() {
   runApp(Main());

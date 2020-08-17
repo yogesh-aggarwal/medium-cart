@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mediumcart/screens/home/home.dart';
+import 'package:mediumcart/screens/home/screen.dart';
 import 'package:mediumcart/services/data.dart';
 import 'package:mediumcart/services/theme.dart';
 

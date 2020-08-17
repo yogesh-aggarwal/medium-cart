@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mediumcart/screens/home/home.dart';
+import 'package:mediumcart/screens/home/screen.dart';
+import 'package:rxdart/rxdart.dart';
 
 class HomeSection extends StatefulWidget {
   final String heading;
   final Function expandAction;
-  final Row items;
+  final Subject stream;
+  final Function builder;
 
   HomeSection({
     @required this.heading,
     @required this.expandAction,
-    @required this.items,
+    @required this.stream,
+    @required this.builder,
   });
 
   @override
@@ -50,7 +53,11 @@ class _HomeSectionState extends State<HomeSection> {
           SingleChildScrollView(
             padding: contentPadding / 2,
             scrollDirection: Axis.horizontal,
-            child: widget.items,
+            child: StreamBuilder(
+              stream: widget.stream,
+              initialData: [],
+              builder: widget.builder,
+            ),
           ),
         ],
       ),

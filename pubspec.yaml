@@ -30,6 +30,7 @@ dependencies:
   google_fonts:
   flutter_svg:
   outline_material_icons:
+  rxdart:
 
 dev_dependencies:
   flutter_test:

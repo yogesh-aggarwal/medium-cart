@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mediumcart/screens/home/section.dart';
-import 'package:mediumcart/services/data.dart';
+import 'package:mediumcart/services/bloc.dart';
 import 'package:mediumcart/services/theme.dart';
-import 'package:mediumcart/screens/home/productCard.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:outline_material_icons/outline_material_icons.dart';
 
 const EdgeInsetsGeometry contentPadding = EdgeInsets.symmetric(horizontal: 20);
 
@@ -109,80 +106,14 @@ class _HomeState extends State<Home> {
                 expandAction: () {
                   print("Expand");
                 },
-                items: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    ProductCard(
-                      card: ProductCardType(
-                        id: "hello",
-                        name:
-                            "Apple Smartwatch Series 1 42 mili 42MM Apple Smartwatch Series 1 42 mili 42MM",
-                        originalPrice: 1299,
-                        discountPrice: 299,
-                        images: [],
-                        manufacturer: "Apple INC",
-                        about:
-                            "Brand new factory sealed in retail box Series 1 Apple watch. work with iPhone 5 or later, not compatible with Android phone",
-                        starRating: 4.5,
-                        reviews: [],
-                      ),
-                    ),
-                    ProductCard(
-                      card: ProductCardType(
-                        id: "hello",
-                        name: "Apple Smartwatch Series 1 42 mili 42MM",
-                        originalPrice: 1299,
-                        discountPrice: 299,
-                        images: [],
-                        manufacturer: "Apple INC",
-                        about:
-                            "Brand new factory sealed in retail box Series 1 Apple watch. work with iPhone 5 or later, not compatible with Android phone",
-                        starRating: 4.5,
-                        reviews: [],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              HomeSection(
-                heading: "Newest offer",
-                expandAction: () {
-                  print("Expand");
+                stream: Data.newestOffer,
+                builder: (context, snapshot) {
+                  return Row(
+                    children: snapshot.data.map<Widget>((dynamic product) {
+                      return Text(product.name);
+                    }).toList(),
+                  );
                 },
-                items: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    ProductCard(
-                      card: ProductCardType(
-                        id: "hello",
-                        name:
-                            "Apple Smartwatch Series 1 42 mili 42MM Apple Smartwatch Series 1 42 mili 42MM",
-                        originalPrice: 1299,
-                        discountPrice: 299,
-                        images: [],
-                        manufacturer: "Apple INC",
-                        about:
-                            "Brand new factory sealed in retail box Series 1 Apple watch. work with iPhone 5 or later, not compatible with Android phone",
-                        starRating: 4.5,
-                        reviews: [],
-                      ),
-                    ),
-                    ProductCard(
-                      card: ProductCardType(
-                        id: "hello",
-                        name: "Apple Smartwatch Series 1 42 mili 42MM",
-                        originalPrice: 1299,
-                        discountPrice: 299,
-                        images: [],
-                        manufacturer: "Apple INC",
-                        about:
-                            "Brand new factory sealed in retail box Series 1 Apple watch. work with iPhone 5 or later, not compatible with Android phone",
-                        starRating: 4.5,
-                        reviews: [],
-                      ),
-                    ),
-                  ],
-                ),
               )
             ],
           ),
