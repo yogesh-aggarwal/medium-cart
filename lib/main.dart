@@ -25,7 +25,7 @@ class Main extends StatelessWidget {
             ),
           ),
         ),
-        canvasColor: Colors.white,
+        canvasColor: Colors.transparent,
         iconTheme: IconThemeData(color: Colors.black),
       ),
       debugShowCheckedModeBanner: false,

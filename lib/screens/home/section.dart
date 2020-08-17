@@ -30,7 +30,7 @@ class _HomeSectionState extends State<HomeSection> {
               Text(
                 widget.heading.toUpperCase(),
                 style: GoogleFonts.workSans(
-                  fontSize: 17,
+                  fontSize: 15,
                   fontWeight: FontWeight.w600,
                 ),
               ),
