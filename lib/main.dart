@@ -26,7 +26,9 @@ class Main extends StatelessWidget {
           ),
         ),
         canvasColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.black),
       ),
+      debugShowCheckedModeBanner: false,
       home: Home(),
     );
   }
