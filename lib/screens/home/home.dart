@@ -115,7 +115,8 @@ class _HomeState extends State<Home> {
                     ProductCard(
                       card: ProductCardType(
                         id: "hello",
-                        name: "Apple Smartwatch Series 1 42 mili 42MM",
+                        name:
+                            "Apple Smartwatch Series 1 42 mili 42MM Apple Smartwatch Series 1 42 mili 42MM",
                         originalPrice: 1299,
                         discountPrice: 299,
                         images: [],
