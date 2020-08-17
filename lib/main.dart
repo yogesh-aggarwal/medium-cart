@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mediumcart/screens/home/screen.dart';
+import 'package:mediumcart/services/bloc.dart';
 
 void main() {
   runApp(Main());
+  Tools.getData();
 }
 
 class Main extends StatelessWidget {

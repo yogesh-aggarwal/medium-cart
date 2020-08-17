@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mediumcart/screens/home/productCard.dart';
 import 'package:mediumcart/screens/home/section.dart';
 import 'package:mediumcart/services/bloc.dart';
 import 'package:mediumcart/services/theme.dart';
@@ -110,11 +111,25 @@ class _HomeState extends State<Home> {
                 builder: (context, snapshot) {
                   return Row(
                     children: snapshot.data.map<Widget>((dynamic product) {
-                      return Text(product.name);
+                      return ProductCard(card: product);
                     }).toList(),
                   );
                 },
-              )
+              ),
+              HomeSection(
+                heading: "By Categories",
+                expandAction: () {
+                  print("Expand");
+                },
+                stream: Data.newestOffer,
+                builder: (context, snapshot) {
+                  return Row(
+                    children: snapshot.data.map<Widget>((dynamic product) {
+                      return ProductCard(card: product);
+                    }).toList(),
+                  );
+                },
+              ),
             ],
           ),
         ),

@@ -28,26 +28,44 @@ class _HomeSectionState extends State<HomeSection> {
       child: Column(
         children: [
           Container(
-            padding: contentPadding,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  widget.heading.toUpperCase(),
-                  style: GoogleFonts.workSans(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                Row(
-                  children: [
-                    RawMaterialButton(
-                      onPressed: widget.expandAction,
-                      child: Text("View All", style: GoogleFonts.workSans()),
+            padding: EdgeInsets.only(bottom: 5),
+            child: Container(
+              padding: contentPadding,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    widget.heading.toUpperCase(),
+                    style: GoogleFonts.workSans(
+                      color: Color(0xFF011738),
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
                     ),
-                  ],
-                )
-              ],
+                  ),
+                  MaterialButton(
+                    onPressed: widget.expandAction,
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(right: 5),
+                          child: Text(
+                            "View All",
+                            style: GoogleFonts.workSans(
+                              color: Color(0xFF011738),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        Icon(
+                          Icons.arrow_forward,
+                          size: 15,
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           SingleChildScrollView(
